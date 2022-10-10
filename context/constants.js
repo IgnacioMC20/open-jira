@@ -14,5 +14,6 @@ export const status = {
 export const entry = {
     addEntry: 'Entry - Add Entry',
     isAddingEntry: 'Entry - Is Adding Entry',
-    updated: 'Entry - Entry Updated'
+    updated: 'Entry - Entry Updated',
+    refresh: 'Entry - Refresh Data'
 }

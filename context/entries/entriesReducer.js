@@ -1,9 +1,9 @@
 import { entry } from "../constants";
 
-
 export const entriesReducer = (state, action) => {
 
     switch (action.type) {
+
         case entry.addEntry:
             return {
                 ...state,
@@ -20,6 +20,12 @@ export const entriesReducer = (state, action) => {
                     }
                     return entry;
                 })
+            }
+        
+        case entry.refresh:
+            return {
+                ...state,
+                entries: [...action.payload],
             }
 
         default:

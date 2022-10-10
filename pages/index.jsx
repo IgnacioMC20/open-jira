@@ -7,7 +7,12 @@ import { status } from "../context/constants";
 
 export default function Home() {
 
-  const { entries } = useContext(EntriesContext)
+  /*
+   * Next puede mandar variables de entorno al cliente usando la expresion `NEXT_PUBLIC_`
+   * antes del nombre de la variable
+   */
+  // console.log(process.env.NEXT_PUBLIC_CLIENT_KEY);
+
 
   // const pending = useMemo(() => entries.filter((entry) => {
   //   return entry.status == status.pending
