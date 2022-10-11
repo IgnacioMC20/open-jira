@@ -6,7 +6,7 @@ import { UIContext } from "../../context/ui";
 export const Navbar = () => {
 
     const { openSideMenu } = useContext(UIContext);
-    
+
     return (
         <AppBar position="sticky" elevation={0}>
             <Toolbar>
@@ -18,6 +18,16 @@ export const Navbar = () => {
                 </Typography>
             </Toolbar>
 
+            {/* Para cambiar el tema [ dark | light ] */}
+            {/* <IconButton sx={{
+                position: 'fixed',
+                right: 30,
+                bottom: 30,
+                backgroundColor: "error.dark"
+            }}>
+                <DarkMode />
+                <LightMode />
+            </IconButton> */}
         </AppBar>
     )
 }

@@ -23,6 +23,8 @@ export const UIProvider = ({ children }) => {
 
     const endDragging = () => dispatch({type: types.uiEndDragging});
 
+    //Todo: poner boton para cambiar el color del tema
+
     return (
         <UIContext.Provider value={{
             ...state,
