@@ -1,8 +1,9 @@
 import { Card, CardActionArea, CardActions, CardContent, Typography } from '@mui/material'
+import { useRouter } from 'next/router';
 import React from 'react'
 import { useContext } from 'react';
 import { UIContext } from '../../context/ui';
-import { aDay, timeSince } from '../../utils/dateFormatter';
+import { dateFunctions } from '../../utils';
 
 export const EntryCard = ({
   description,
@@ -10,6 +11,7 @@ export const EntryCard = ({
   createdAt, }) => {
 
   const { startDragging, endDragging } = useContext(UIContext);
+  const router = useRouter();
 
   const onDragStart = (event) => {
     event.dataTransfer.setData('text', _id);
@@ -18,10 +20,14 @@ export const EntryCard = ({
 
   }
 
-  const onDragEnd = (event) => endDragging();
+  const onClick = () => {
+    router.push(`/entries/${_id}`)
+  }
+
+  const onDragEnd = () => endDragging();
 
   return (
-    <Card sx={{ marginBottom: 1 }} draggable={true} onDragStart={onDragStart} onDragEnd={onDragEnd}>
+    <Card sx={{ marginBottom: 1 }} draggable={true} onDragStart={onDragStart} onDragEnd={onDragEnd} onClick={onClick}>
       <CardActionArea>
         <CardContent>
           <Typography sx={{ whiteSpace: 'pre-line' }}>
@@ -31,7 +37,7 @@ export const EntryCard = ({
 
         <CardActions sx={{ display: 'flex', justifyContent: 'end', paddingRight: 2 }}>
           <Typography variant='body2'>
-            {timeSince(createdAt - aDay)}
+            {dateFunctions.getDistanceToNow(createdAt)}
           </Typography>
         </CardActions>
       </CardActionArea>

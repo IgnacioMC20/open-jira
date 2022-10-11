@@ -3,6 +3,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import { EntriesProvider } from '../context/entries/EntriesProvider'
 import { UIProvider } from '../context/ui'
 import '../styles/globals.css'
+import "react-toastify/dist/ReactToastify.css";
 import { darkTheme, lightTheme } from '../themes'
 
 function MyApp({ Component, pageProps }) {

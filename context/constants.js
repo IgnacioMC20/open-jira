@@ -7,8 +7,8 @@ export const types = {
 
 export const status = {
     pending: 'pending',
-    finished: 'finished',
-    inProgress: 'in-progress'
+    inProgress: 'in-progress',
+    finished: 'finished'
 }
 
 export const entry = {

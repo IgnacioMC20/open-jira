@@ -1,11 +1,14 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material"
+import { AppBar, IconButton, Link, Toolbar, Typography } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import { useContext } from "react";
 import { UIContext } from "../../context/ui";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
 
 export const Navbar = () => {
 
     const { openSideMenu } = useContext(UIContext);
+    const router = useRouter()
 
     return (
         <AppBar position="sticky" elevation={0}>
@@ -13,9 +16,13 @@ export const Navbar = () => {
                 <IconButton onClick={openSideMenu}>
                     <MenuIcon />
                 </IconButton>
-                <Typography variant="h6">
-                    OpenJira
-                </Typography>
+                <NextLink href='/' passHref>
+                    <Link underline="none" color='white'>
+                        <Typography variant="h6" onClick={() => router.push('/')} sx={{ cursor: 'pointer' }}>
+                            OpenJira
+                        </Typography>
+                    </Link>
+                </NextLink>
             </Toolbar>
 
             {/* Para cambiar el tema [ dark | light ] */}
