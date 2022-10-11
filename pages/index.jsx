@@ -1,8 +1,6 @@
 import { Card, CardContent, CardHeader, Grid } from "@mui/material";
-import { useContext } from "react";
 import { Layout } from "../components/layouts";
 import { EntryList, NewEntry } from "../components/ui";
-import { EntriesContext } from "../context/entries/EntriesContext";
 import { status } from "../context/constants";
 
 export default function Home() {
